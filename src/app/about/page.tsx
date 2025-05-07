@@ -23,7 +23,7 @@ export default function About() {
           <h2 className="text-2xl font-semibold text-text-dark">My Journey</h2>
           <p className="text-text-default">
             With a strong background in computer science and a passion for artificial intelligence,
-            I've dedicated my career to developing cutting-edge AI solutions. My expertise spans
+            I&apos;ve dedicated my career to developing cutting-edge AI solutions. My expertise spans
             machine learning, deep learning, and natural language processing.
           </p>
           <p className="text-text-default">
@@ -75,7 +75,7 @@ export default function About() {
           </div>
           <div className="bg-primary-dark p-6 rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold text-text-dark mb-2">
-              Master's in Computer Science
+              Master&apos;s in Computer Science
             </h3>
             <p className="text-text-default mb-2">University Name • 2018 - 2020</p>
             <p className="text-text-default">

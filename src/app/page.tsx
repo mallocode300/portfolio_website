@@ -18,8 +18,8 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col justify-center pt-2">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-dark mb-4">
-            I'm Mallory, an AI Engineer.
+          <h1 className="text-4xl font-bold text-text-dark mb-4">
+            I'm Mallory, AI Engineer
           </h1>
           <p className="text-lg text-text-default mb-4">
             AI Engineer passionate about designing adaptive, self-learning agents that redefine human-machine collaboration. My work sits at the intersection of machine learning, deep reinforcement learning, and cognitive architectures, where I engineer AI systems that perceive, reason, and act in dynamic environments.

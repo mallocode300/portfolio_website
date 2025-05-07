@@ -72,7 +72,7 @@ export default function Contact() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-text-dark mb-4">Contact Me</h1>
         <p className="text-xl text-text-default">
-          Let's discuss how we can work together on your next AI project
+          I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
         </p>
       </div>
 
