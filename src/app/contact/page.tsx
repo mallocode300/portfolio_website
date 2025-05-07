@@ -49,7 +49,8 @@ export default function Contact() {
           message: data.error || 'Failed to send message. Please try again.'
         })
       }
-    } catch (error) {
+    } catch (error: unknown) {
+      console.error('Error submitting form:', error);
       setSubmitStatus({
         success: false,
         message: 'An error occurred. Please try again later.'
@@ -221,7 +222,7 @@ export default function Contact() {
               Availability
             </h2>
             <p className="text-text-default mb-4">
-              I'm currently available for:
+              I&apos;m currently available for:
             </p>
             <ul className="list-disc list-inside text-text-default space-y-2">
               <li>Consulting projects</li>
