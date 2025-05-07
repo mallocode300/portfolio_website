@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       // Send email using Resend
       const data = await resend.emails.send({
         from: 'Portfolio Contact <onboarding@resend.dev>', // You can change this after verifying your domain
-        to: 'mantomarchi300@outlook.com',
+        to: 'mantomarchi002@proton.me',
         replyTo: email,
         subject: `Contact Form: ${subject}`,
         html: `
