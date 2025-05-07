@@ -1,16 +1,27 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not defined in environment variables');
-}
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend without throwing errors at build time
+let resend: Resend;
 
 // This is a simple email sending API using fetch to an external email service
 // In a production environment, you would use a proper email service like SendGrid, Mailgun, etc.
 export async function POST(request: Request) {
   try {
+    // Check for API key at runtime
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not defined in environment variables');
+      return NextResponse.json(
+        { error: 'Email service not configured. Please contact the administrator.' },
+        { status: 500 }
+      );
+    }
+
+    // Initialize Resend if not already initialized
+    if (!resend) {
+      resend = new Resend(process.env.RESEND_API_KEY);
+    }
+
     const body = await request.json();
     const { name, email, subject, message } = body;
     
