@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+if (!process.env.RESEND_API_KEY) {
+  throw new Error('RESEND_API_KEY is not defined in environment variables');
+}
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // This is a simple email sending API using fetch to an external email service
@@ -20,7 +24,7 @@ export async function POST(request: Request) {
 
     try {
       // Send email using Resend
-      await resend.emails.send({
+      const data = await resend.emails.send({
         from: 'Portfolio Contact <onboarding@resend.dev>', // You can change this after verifying your domain
         to: 'mantomarchi300@outlook.com',
         replyTo: email,
@@ -35,6 +39,8 @@ export async function POST(request: Request) {
           </div>
         `,
       });
+      
+      console.log('Email sent successfully:', data);
       
       // Return success response
       return NextResponse.json(
